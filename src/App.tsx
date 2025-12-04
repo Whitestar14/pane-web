@@ -3,14 +3,7 @@ import { FracturedLogo } from './components/Logo'
 import { ClockIcon, StopWatchIcon, FocusIcon, PaletteIcon, AndroidIcon, GithubIcon, SparklesIcon } from './components/Icons'
 
 const App: React.FC = () => {
-  const scrollToDownload = () => {
-    const el = document.querySelector('button[aria-label="Download"]')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
-
   const handleDownload = () => {
-  scrollToDownload(); 
-
   window.location.href = "https://github.com/Whitestar14/pane-app/releases/download/v0.7.1/pane-v0.7.1-beta.apk";
 };
 
