@@ -11,7 +11,7 @@ const App: React.FC = () => {
   const handleDownload = () => {
   scrollToDownload(); 
 
-  window.location.href = "YOUR_GITHUB_RELEASE_ASSET_URL";
+  window.location.href = "https://github.com/Whitestar14/pane-app/releases/download/v0.7.1/pane-v0.7.1-beta.apk";
 };
 
   return (
@@ -117,7 +117,7 @@ const App: React.FC = () => {
         {/* [HEADER] Nav Button - Exact same padding as Left Panel */}
         <header className="p-8 lg:p-12 xl:p-16 flex justify-end items-center">
           <button
-            onClick={scrollToDownload}
+            onClick={handleDownload}
             className="hidden lg:flex font-mono text-xs font-black uppercase tracking-widest px-6 py-3 rounded-full border-2 border-slate-900 hover:bg-slate-900 hover:text-white transition-colors items-center gap-2"
           >
             Get App <span className="text-lg leading-none mb-0.5">&darr;</span>
