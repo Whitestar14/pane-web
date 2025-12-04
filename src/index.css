@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@layer theme, base, components, utilities;
+
+@theme {
+  /* --- Colors --- */
+  --color-pane-orange: #FF9F1C;
+  --color-pane-blue: #0052CC;
+  --color-pane-lightblue: #A5C9CA;
+  --color-pane-darkblue: #0B3954;
+  --color-pane-surface: #F1F5F9;
+
+  /* --- Border Radius --- */
+  --border-sheet: 0.75rem;
+  --border-sheet-lg: 2rem;
+
+  /* --- Box Shadow --- */
+  --shadow-vibrant: 0 25px 50px -12px rgba(0, 82, 204, 0.25);
+
+  /* --- Font Families --- */
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: #020617;
+  color: #FF9F1C;
+}
