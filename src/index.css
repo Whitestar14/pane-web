@@ -3,30 +3,103 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-@layer theme, base, components, utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
-  /* --- Colors --- */
-  --color-pane-orange: #FF9F1C;
-  --color-pane-blue: #0052CC;
-  --color-pane-lightblue: #A5C9CA;
-  --color-pane-darkblue: #0B3954;
-  --color-pane-surface: #F1F5F9;
+  /*
+  |--------------------------------------------------------------------------
+  | Colors
+  |
+  | Custom colors are defined directly as CSS custom properties.
+  | Tailwind automatically creates utilities like 'bg-pane-navy' from these.
+  |--------------------------------------------------------------------------
+  */
+  --color-pane-navy: #003566;
+  --color-pane-azure: #4CC9F0;
+  --color-pane-tangerine: #F77F00;
+  --color-pane-sun: #FFD60A;
+  --color-pane-cream: #FDF0D5;
 
-  /* --- Border Radius --- */
-  --border-sheet: 0.75rem;
-  --border-sheet-lg: 2rem;
-
-  /* --- Box Shadow --- */
-  --shadow-vibrant: 0 25px 50px -12px rgba(0, 82, 204, 0.25);
-
-  /* --- Font Families --- */
-  --font-sans: 'Inter', sans-serif;
+  /*
+  |--------------------------------------------------------------------------
+  | Fonts
+  |
+  | You use the standard CSS way to define font variables and then use
+  | @theme to assign them to a utility key (e.g., 'font-sans').
+  |--------------------------------------------------------------------------
+  */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Spacing Scales (letterSpacing)
+  |
+  | Define custom scales using their respective CSS property names.
+  |--------------------------------------------------------------------------
+  */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tightest: -0.08em;
+
+  /*
+  |--------------------------------------------------------------------------
+  | Keyframes and Custom Properties (animation & backgroundImage)
+  |
+  | Define your keyframes and custom properties, and then reference them
+  | in utilities using standard CSS variable notation.
+  |--------------------------------------------------------------------------
+  */
+  --animate-spin-slow: spin 12s linear infinite;
+  
+  --background-image-wave-pattern: repeating-linear-gradient(45deg, #003566 0px, #003566 20px, #004585 20px, #004585 40px);
 }
 
-/* Custom selection color */
-::selection {
-  background-color: #020617;
-  color: #FF9F1C;
-}
+   /* Custom selection color */
+      ::selection {
+        background-color: #003566;
+        color: #FFD60A;
+      }
+      body {
+        background-color: #FDF0D5;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #FDF0D5;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #003566;
+        border: 3px solid #FDF0D5;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #F77F00;
+      }
+
+      /* 3D Transform Utils */
+      .backface-hidden {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+
+      /* Lenis Recommended CSS */
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
